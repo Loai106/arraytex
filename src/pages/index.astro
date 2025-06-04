@@ -11,8 +11,8 @@ import { collectionDateSort } from "@/utils/date";
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = allPosts
-	.sort(collectionDateSort)
-	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
+  .sort(collectionDateSort)
+  .slice(0, MAX_POSTS) as CollectionEntry<"post">[];
 
 // Notes
 const MAX_NOTES = 2;
@@ -21,42 +21,107 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<!-- Hero section -->
-	<!-- Background blur -->
-	<div class="absolute top-0 left-1/2 md:top-[-15%] -ml-[50vw] min-h-screen w-screen pointer-events-none blur-3xl opacity-50 overflow-x-hidden">
-		<div class="absolute top-[10%] right-[-40%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-10"></div>
-		<div class="absolute top-[10%] left-[-40%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-10"></div>
-		<div class="absolute top-[-20%] left-[-50%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
-		<div class="absolute top-[-20%] right-[-50%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
-	</div>
-	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
-		<div class="w-full text-center">
-			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
-				Introducing Astro Citrus!
-			</span>
-			<p class="mt-4 mb-4 text-lg font-medium">
-				Hi, I’m an Astro theme for building websites or blogs. To customize, add posts, or make it yours, click the GitHub icon below to visit my repo.
-			</p>
-			<div class="flex justify-center mb-4">
-				<SocialList />
-			</div>
-			<div class="flex justify-center space-x-4 mt-4">
-				<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
-					<span class="text-bgColor font-semibold">
-						Read Blog
-					</span>
-				</a>
+  <!-- Hero section -->
+  <!-- Background blur -->
+  <div
+    class="absolute top-0 left-1/2 md:top-[-15%] -ml-[50vw] min-h-screen w-screen pointer-events-none blur-3xl opacity-50 overflow-x-hidden"
+  >
+    <div
+      class="absolute top-[10%] right-[-40%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-10"
+    >
+    </div>
+    <div
+      class="absolute top-[10%] left-[-40%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-10"
+    >
+    </div>
+    <div
+      class="absolute top-[-20%] left-[-50%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-10"
+    >
+    </div>
+    <div
+      class="absolute top-[-20%] right-[-50%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-10"
+    >
+    </div>
+  </div>
+  <div class="mb-32">
+    <section
+      class="max-w-xl mx-auto relative flex items-center justify-center py-24"
+    >
+      <div class="w-full text-center">
+        <span
+          class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent"
+        >
+          Introducing ArrayTex!
+        </span>
+        <p class="mt-4 mb-4 text-lg font-medium">
+          ArrayTex pushes the boundaries of microelectronics and embedded
+          systems to shape the future of smart automation. Our innovative
+          solutions, equipped with advanced data acquisition, signal processing,
+          and image processing technologies, enhance productivity and drive
+          innovation across various sectors.
+        </p>
+        <p class="mt-4 mb-4 text-lg font-medium">
+          Our tailored services span specialized solutions for the food industry
+          and IoT systems providing a transformative journey from data to
+          innovation and from technology to impactful solutions. We strive to
+          establish reliable, long-term partnerships, empowering our clients
+          toward a smarter, sustainable future. Join ArrayTex, and together
+          let’s build the future through the transformative power of technology.
+        </p>
+        <div class="flex justify-center mb-4">
+          <SocialList />
+        </div>
+        <!-- <div class="flex justify-center space-x-4 mt-4">
+        <a
+          href="/posts/"
+          class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two"
+        >
+          <span class="text-bgColor font-semibold"> Read Blog </span>
+        </a>
 
-				<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Wake up
-					</span>
-				</a>
-			</div>
-		</div>
-	</section>
+        <a
+          href="/notes/wake-up/"
+          class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest"
+        >
+          <span
+            class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two"
+          >
+            Wake up
+          </span>
+        </a>
+      </div> -->
+      </div>
+    </section>
 
-	<!-- Posts Section -->
+    <section id="contact" class="mt-2 mb-10 max-w-2xl mx-auto text-center">
+      <h2 class="title mb-6 text-accent-one">Contact Us</h2>
+      <p class="mb-6 text-lg text-textColor">
+        We'd love to hear from you! Reach out with any questions,
+        collaborations, or partnership opportunities.
+      </p>
+      <div class="space-y-4 text-left text-md">
+        <div>
+          <span class="text-accent-one">Email:</span>
+          <a
+            href="mailto:info@arraytex.com"
+            class="ml-2 hover:underline text-special-dark">info@arraytex.com</a
+          >
+        </div>
+        <div>
+          <span class="text-accent-one">Phone:</span>
+          <span class="ml-2 text-textColor">+90 (533) 357-5387</span>
+        </div>
+        <div>
+          <span class="text-accent-one">Address:</span>
+          <span class="ml-2 text-textColor"
+            >Dijitalpark Teknokent Eski Ankara Caddesi, Kirazlıdere Mahallesi
+            No: 4A, Çekmeköy, İstanbul 34788, TR</span
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Posts Section
 	<section aria-label="Blog post list" class="'mt-[-100vh] pt-[100vh]'">
 		<h2 class="title mb-6 text-xl text-accent-two">
 			<a href="/posts/">Posts</a>
@@ -70,30 +135,28 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 				))
 			}
 		</ul>
-	</section>
+	</section> -->
 
-	<!-- Notes Section -->
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-12">
-				<h2 class="title mb-6 text-accent-two">
-					<a href="/notes/">Notes</a>
-				</h2>
-				<div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-					{
-						latestNotes.map((note) => (
-							<div>
-								<Note note={note} as="h4" isPreview />
-							</div>
-						))
-					}
-				</div>
-			</section>
-		)
-	}
+  <!-- Notes Section -->
+  <!-- {
+    latestNotes.length > 0 && (
+      <section class="mt-12">
+        <h2 class="title mb-6 text-accent-two">
+          <a href="/notes/">Notes</a>
+        </h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          {latestNotes.map((note) => (
+            <div>
+              <Note note={note} as="h4" isPreview />
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  } -->
 
-	<!-- Debug -->
-	<!--
+  <!-- Debug -->
+  <!--
 	<div class="flex justify-between flex-wrap gap-y-1.5 mt-6 text-sm font-medium">
 		<div class="text-center content-center h-10 w-10 bg-color-50"><span class="text-textColor">50</span></div>
 		<div class="text-center content-center h-10 w-10 bg-color-75"><span class="text-textColor">75</span></div>
@@ -126,4 +189,3 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 	</div>
 	-->
 </PageLayout>
-
